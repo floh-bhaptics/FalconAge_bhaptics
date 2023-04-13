@@ -10,6 +10,8 @@ using UnityEngine;
 
 using MyBhapticsTactsuit;
 
+[assembly: MelonInfo(typeof(FalconAge_bhaptics.FalconAge_bhaptics), "FalconAge_bhaptics", "2.0.0", "Florian Fahrenberger")]
+[assembly: MelonGame("Outerloop Games", "FalconAge")]
 
 namespace FalconAge_bhaptics
 {
@@ -18,9 +20,8 @@ namespace FalconAge_bhaptics
         public static TactsuitVR tactsuitVr;
         public static bool whipHandIsRight = true;
 
-        public override void OnApplicationStart()
+        public override void OnInitializeMelon()
         {
-            base.OnApplicationStart();
             tactsuitVr = new TactsuitVR();
             tactsuitVr.PlaybackHaptics("HeartBeat");
         }
